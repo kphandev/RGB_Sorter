@@ -1,17 +1,33 @@
 body {
-  background-image: url("https://i.kym-cdn.com/entries/icons/original/000/013/564/doge.jpg");
+
+  background: #00c9ff; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #92fe9d,
+    #00c9ff
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #92fe9d,
+    #00c9ff
+  );
+}
+
+body * {
+  font-family: 'Grandstander', cursive;
 }
 
 div button {
     border-radius: 20px;
     background-color: lightblue;
     width: 80%;
+    height: 40px;
 }
 
 h1 {
     border-radius: 20px;
     background-color: lightyellow;
-    border: 6px solid lightblue;
+    border: 6px solid gray;
 }
 
 .row {
@@ -36,6 +52,6 @@ h1 {
   height: 60px;
   float: inline-start;
   margin: 0 10px;
-  border: 2px solid lightblue;
+  border: 2px solid black;
   border-radius: 20px;
 }

@@ -21,6 +21,7 @@ const allColors = [
   [118, 18, 224],
   [223, 17, 181]
 ];
+var asc = true;
 
 var squares = document.querySelectorAll(".square");
 for (var i = 0; i < allColors.length; i++) {
@@ -35,23 +36,41 @@ document.querySelector("#reset").addEventListener("click", function () {
     squares[i].style.background = "rgb(" + defaultColors[i] + ")";
     squares[i].textContent = "";
   }
+  document.querySelector("#red").textContent="RED";
+  document.querySelector("#green").textContent="GREEN";
+  document.querySelector("#blue").textContent="BLUE";
 });
 
 //sort red
 var toggle = true;
 document.querySelector("#red").addEventListener("click", function () {
+    if(asc == true) {
+      this.textContent = "RED ↓"
+    } else {
+      this.textContent = "RED ↑"
+    }
     sortIndex = 0;
     changeColors();
 });
 
 //sort green
 document.querySelector("#green").addEventListener("click", function () {
+  if(asc == true) {
+    this.textContent = "GREEN ↓"
+  } else {
+    this.textContent = "GREEN ↑"
+  }
     sortIndex = 1;
     changeColors();
 });
 
 //sort blue
 document.querySelector("#blue").addEventListener("click", function () {
+  if(asc == true) {
+    this.textContent = "BLUE ↓"
+  } else {
+    this.textContent = "BLUE ↑"
+  }
   sortIndex = 2;
   changeColors();
 });
@@ -79,6 +98,7 @@ function changeColors() {
 }
 
 function sortAsc(a, b) {
+  asc = true;
   var i = sortIndex;
   if (a[i] === b[i]) {
     return 0;
@@ -88,6 +108,7 @@ function sortAsc(a, b) {
 }
 
 function sortdesc(a, b) {
+  asc = false;
   var i = sortIndex;
   if (a[i] === b[i]) {
     return 0;
